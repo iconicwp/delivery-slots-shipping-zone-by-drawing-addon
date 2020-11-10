@@ -24,8 +24,15 @@ class Iconic_WDS_Compat_Shipping_Zones_By_Drawing {
 	 */
 	public function __construct() {
 		add_action( 'plugins_loaded', array( __CLASS__, 'hooks' ) );
+		register_activation_hook( __FILE__, array( __CLASS__, 'plugin_activated' ) );
 	}
 
+	/**
+	 * Plugin activated.
+	 */
+	public function plugin_activated() {
+		delete_transient( 'iconic-wds-shipping-methods' );
+	}
 
 	/**
 	 * Hooks.
