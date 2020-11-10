@@ -30,7 +30,7 @@ class Iconic_WDS_Compat_Shipping_Zones_By_Drawing {
 	/**
 	 * Plugin activated.
 	 */
-	public function plugin_activated() {
+	public static function plugin_activated() {
 		delete_transient( 'iconic-wds-shipping-methods' );
 	}
 
